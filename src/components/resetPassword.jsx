@@ -1,11 +1,10 @@
-// ResetPassword.js
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 
 const ResetPassword = () => {
-  const { token } = useParams(); // Assuming token is passed in the URL
+  const { token } = useParams();
   const [newPassword, setNewPassword] = useState('');
   const [message, setMessage] = useState('');
 

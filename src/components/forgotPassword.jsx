@@ -1,7 +1,6 @@
-// ForgetPassword.js
 import React, { useState } from 'react';
 import axios from 'axios';
-// Import the CSS file
+
 
 const ForgetPassword = () => {
   const [email, setEmail] = useState('');
@@ -13,7 +12,7 @@ const ForgetPassword = () => {
       const response = await axios.post('http://localhost:5000/api/forgot-password', { email });
     setMessage(response.data.message);
     } catch (error) {
-      // Check if error.response exists to avoid reading 'data' of undefined
+     
       if (error.response) {
         setMessage(error.response.data.message || 'Something went wrong!');
       } else {
