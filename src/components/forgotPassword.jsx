@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-
 const ForgetPassword = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -9,10 +8,10 @@ const ForgetPassword = () => {
   const handleEmailSubmit = async (e) => {
     e.preventDefault();
     try {
+      // Send the email as part of the request body
       const response = await axios.post('http://localhost:5000/api/forgot-password', { email });
-    setMessage(response.data.message);
+      setMessage(response.data.message);
     } catch (error) {
-     
       if (error.response) {
         setMessage(error.response.data.message || 'Something went wrong!');
       } else {
@@ -20,7 +19,6 @@ const ForgetPassword = () => {
       }
     }
   };
-  
 
   return (
     <div className="container">
